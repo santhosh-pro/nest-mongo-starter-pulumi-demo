@@ -6,7 +6,6 @@ import { CreateCatMapper } from './create-cat-mapper';
 import { CreateCatRequest } from './create-cat-request';
 
 @ApiTags('cats')
-@ApiBearerAuth()
 @Controller('cats')
 export class CreateCatController {
   constructor(
@@ -19,7 +18,8 @@ export class CreateCatController {
   async create(@Body() createCatRequest: CreateCatRequest) {
     await this.unitOfWorkService.withRetrySession(async (session: any) => {
       const cat = this.mapper.mapToCat(createCatRequest);
-      await this.catService.insert(cat, session);
+      const result= await this.catService.insert(cat, session);
+      return {id:result.id}
     });
   }
 }

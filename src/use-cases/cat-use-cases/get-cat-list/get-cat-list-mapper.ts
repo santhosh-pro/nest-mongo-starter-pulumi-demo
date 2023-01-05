@@ -14,6 +14,7 @@ export class GetCatListMapper {
       totalPages: request.totalPages,
       items: request.items.map((x) => {
         return {
+          id:x.id,
           name: x.name,
           age: x.age,
           breed: x.breed

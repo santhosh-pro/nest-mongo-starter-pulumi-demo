@@ -7,6 +7,8 @@ export type CatDocument = HydratedDocument<Cat>;
   timestamps: true
 })
 export class Cat {
+  id:string;
+  
   @Prop()
   name: string;
 

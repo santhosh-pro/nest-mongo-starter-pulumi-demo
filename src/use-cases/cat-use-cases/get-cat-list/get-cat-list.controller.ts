@@ -5,7 +5,6 @@ import { GetCatListMapper } from './get-cat-list-mapper';
 import { GetCatListRequest } from './get-cat-list-request';
 
 @ApiTags('cats')
-@ApiBearerAuth()
 @Controller('cats')
 export class GetCatListController {
   constructor(

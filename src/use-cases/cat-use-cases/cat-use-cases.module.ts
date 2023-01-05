@@ -5,10 +5,11 @@ import { CreateCatMapper } from './create-cat/create-cat-mapper';
 import { CreateCatController } from './create-cat/create-cat.controller';
 import { GetCatListMapper } from './get-cat-list/get-cat-list-mapper';
 import { GetCatListController } from './get-cat-list/get-cat-list.controller';
+import { DeleteCatController } from './delete-cat/delete-cat.controller';
 
 @Module({
   imports: [RequestContextModule, MongoDbModule],
-  controllers: [CreateCatController, GetCatListController],
+  controllers: [CreateCatController, GetCatListController,DeleteCatController],
   providers: [CreateCatMapper, GetCatListMapper]
 })
 export class CatUseCasesModule {}
