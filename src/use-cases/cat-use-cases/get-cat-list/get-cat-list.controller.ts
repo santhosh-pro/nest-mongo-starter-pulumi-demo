@@ -22,7 +22,6 @@ export class GetCatListController {
       query.sortingDirection,
       {}
     );
-    // return result;
     const response = this.mapper.mapToCatListResponse(result);
     return response;
   }

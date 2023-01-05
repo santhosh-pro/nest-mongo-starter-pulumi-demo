@@ -1,6 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
-import { Food } from '../food/food.schema';
 
 export type CatDocument = HydratedDocument<Cat>;
 
@@ -23,13 +22,6 @@ export class Cat {
   @Prop()
   modifiedBy: string;
 
-  foods: Food[];
 }
 
 export const CatSchema = SchemaFactory.createForClass(Cat);
-
-CatSchema.virtual('foods', {
-  ref: Food.name,
-  localField: '_id',
-  foreignField: 'catId'
-});

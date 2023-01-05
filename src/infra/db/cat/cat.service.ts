@@ -132,6 +132,7 @@ export class CatService {
     //   query.select(select);
     // }
 
+    
     if (orderByPropertyName) {
       query.sort({
         [orderByPropertyName]: sortingDirection || SortingDirection.Ascending

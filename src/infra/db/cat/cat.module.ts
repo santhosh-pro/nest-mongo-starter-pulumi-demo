@@ -7,10 +7,10 @@ import { CatService } from './cat.service';
 
 @Module({
   imports: [
-         MongooseModule.forFeatureAsync([
+    MongooseModule.forFeatureAsync([
       {
-    name: Cat.name,
-          inject: [RequestContextService],
+        name: Cat.name,
+        inject: [RequestContextService],
         useFactory: (requestContextService: RequestContextService) => {
           const schema = CatSchema;
           schema.pre<Cat>('save', function () {
